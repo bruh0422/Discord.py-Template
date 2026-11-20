@@ -1,17 +1,14 @@
 import discord
 from discord.ext import commands
 
-import os, json
+import os
 
 from dotenv import load_dotenv
 load_dotenv()
 
-with open('config.json', 'r') as f:
-    config: dict = json.load(f)
-
 class MyBot(commands.AutoShardedBot):
     def __init__(self):
-        super().__init__(command_prefix=commands.when_mentioned_or(config.get('prefix')), intents=discord.Intents.all())
+        super().__init__(command_prefix=commands.when_mentioned_or('!'), intents=discord.Intents.all())
 
     async def setup_hook(self):
         for filename in os.listdir('./cmds'):
