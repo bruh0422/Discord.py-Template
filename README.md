@@ -11,3 +11,4 @@ cd Discord.py-Template
 ### 安裝必要檔案
 ```bash
 pip install -r requirements.txt
+```
