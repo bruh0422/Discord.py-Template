@@ -8,7 +8,7 @@ load_dotenv()
 
 class MyBot(commands.AutoShardedBot):
     def __init__(self):
-        super().__init__(command_prefix=commands.when_mentioned_or('!'), intents=discord.Intents.all())
+        super().__init__(command_prefix='!', intents=discord.Intents.all())
 
     async def setup_hook(self):
         for filename in os.listdir('./cmds'):
